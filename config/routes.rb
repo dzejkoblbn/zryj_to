@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :restauracje
   resources :klienci
   resources :produkty
   resources :produkty_na_zamowieniu
@@ -7,6 +8,5 @@ Rails.application.routes.draw do
   resources :pracownicy
   resources :ulice
   resources :obszary
-  resources :restauracje
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
