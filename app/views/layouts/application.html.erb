@@ -8,7 +8,13 @@
 </head>
 <body>
 
+<% if logged_in? %>
+  Zalogowany jako <%= current_klient.imie %> <%= current_klient.nazwisko %>
+  <%= link_to "Profil", current_klient %>
+  <%= link_to "Wyloguj", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Zaloguj", login_path %>
+<% end %>
 <%= yield %>
-
 </body>
 </html>

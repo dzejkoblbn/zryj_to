@@ -16,6 +16,15 @@
     <%= f.number_field :id_klienta %>
   </div>
 
+  <div class="field
+    <%= f.label :password %>
+    <%= f.password_field :password, id: :klient_password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, id: :klient_password_confirmation %>
+  </div>
+
   <div class="field">
     <%= f.label :imie %>
     <%= f.text_field :imie %>

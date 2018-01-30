@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130141538) do
+ActiveRecord::Schema.define(version: 20180130180343) do
 
   create_table "kliencis", force: :cascade do |t|
     t.integer  "id_klienta"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20180130141538) do
     t.string   "kod_pocztowy"
     t.string   "numer_lokalu"
     t.integer  "zamowienia_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.index ["id_klienta"], name: "index_kliencis_on_id_klienta", unique: true
     t.index ["zamowienia_id"], name: "index_kliencis_on_zamowienia_id"
   end
 
@@ -92,15 +94,6 @@ ActiveRecord::Schema.define(version: 20180130141538) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["obszary_id"], name: "index_ulices_on_obszary_id"
-  end
-
-  create_table "zamowienia", force: :cascade do |t|
-    t.integer  "id_zamowienia"
-    t.integer  "czas_realizacji"
-    t.integer  "produkty_na_zamowieniu_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["produkty_na_zamowieniu_id"], name: "index_zamowienia_on_produkty_na_zamowieniu_id"
   end
 
   create_table "zamowienias", force: :cascade do |t|
