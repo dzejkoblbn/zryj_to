@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @pracownik.index %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pracownik.name %>
+</p>
+
+<%= link_to 'Edit', edit_pracownik_path(@pracownik) %> |
+<%= link_to 'Back', pracowniks_path %>
