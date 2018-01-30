@@ -1,0 +1,2 @@
+class Ulice < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ProduktyNaZamowieniu < ApplicationRecord
+end

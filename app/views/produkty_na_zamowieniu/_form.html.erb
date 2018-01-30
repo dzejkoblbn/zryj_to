@@ -1,0 +1,22 @@
+<%= form_for(produkty_na_zamowieniu) do |f| %>
+  <% if produkty_na_zamowieniu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(produkty_na_zamowieniu.errors.count, "error") %> prohibited this produkty_na_zamowieniu from being saved:</h2>
+
+      <ul>
+      <% produkty_na_zamowieniu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :index %>
+    <%= f.text_field :index %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126140455) do
+ActiveRecord::Schema.define(version: 20180130114247) do
+
+  create_table "klienci", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "obszary", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pracownicy", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pracownik_zamowienia", force: :cascade do |t|
   end
@@ -18,6 +36,42 @@ ActiveRecord::Schema.define(version: 20180126140455) do
   create_table "pracowniks", force: :cascade do |t|
     t.string   "index"
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "produkty", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "produkty_na_zamowieniu", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restauracje", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typy_pracownika", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ulice", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zamowienia", force: :cascade do |t|
+    t.string   "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

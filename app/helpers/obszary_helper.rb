@@ -1,0 +1,2 @@
+module ObszaryHelper
+end

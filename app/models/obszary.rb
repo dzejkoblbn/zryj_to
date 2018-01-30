@@ -1,0 +1,2 @@
+class Obszary < ApplicationRecord
+end
