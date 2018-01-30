@@ -1,2 +1,0 @@
-class Zamowienium < ApplicationRecord
-end
