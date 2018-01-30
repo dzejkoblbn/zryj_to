@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_produktu: 1
+  nazwa: MyString
+  cena: 1.5
+  czas_przygotowania: 1
+  produkty_na_zamowieniu: one
+
+two:
+  id_produktu: 1
+  nazwa: MyString
+  cena: 1.5
+  czas_przygotowania: 1
+  produkty_na_zamowieniu: two

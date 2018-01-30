@@ -1,0 +1,32 @@
+<%= form_for(typy_pracownika) do |f| %>
+  <% if typy_pracownika.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(typy_pracownika.errors.count, "error") %> prohibited this typy_pracownika from being saved:</h2>
+
+      <ul>
+      <% typy_pracownika.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_typu %>
+    <%= f.number_field :id_typu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nazwa_typu %>
+    <%= f.text_field :nazwa_typu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pracownicy_id %>
+    <%= f.text_field :pracownicy_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

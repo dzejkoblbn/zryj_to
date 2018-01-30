@@ -1,3 +1,3 @@
 class Ulice < ApplicationRecord
- belongs_to :obszary
+  belongs_to :obszary
 end

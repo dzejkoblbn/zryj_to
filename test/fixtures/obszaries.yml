@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_obszaru: 1
+  nazwa_obszaru: MyString
+  restauracje: one
+
+two:
+  id_obszaru: 1
+  nazwa_obszaru: MyString
+  restauracje: two

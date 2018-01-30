@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id ulicy:</strong>
+  <%= @ulice.id_ulicy %>
+</p>
+
+<p>
+  <strong>Ulica:</strong>
+  <%= @ulice.ulica %>
+</p>
+
+<p>
+  <strong>Kod pocztowy:</strong>
+  <%= @ulice.kod_pocztowy %>
+</p>
+
+<p>
+  <strong>Numer lokalu:</strong>
+  <%= @ulice.numer_lokalu %>
+</p>
+
+<p>
+  <strong>Obszary:</strong>
+  <%= @ulice.obszary %>
+</p>
+
+<%= link_to 'Edit', edit_ulice_path(@ulice) %> |
+<%= link_to 'Back', ulices_path %>

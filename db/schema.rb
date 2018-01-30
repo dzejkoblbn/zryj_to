@@ -10,60 +10,106 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130121246) do
+ActiveRecord::Schema.define(version: 20180130141538) do
 
-  create_table "klienci", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "kliencis", force: :cascade do |t|
+    t.integer  "id_klienta"
+    t.string   "imie"
+    t.string   "nazwisko"
+    t.string   "ulica"
+    t.string   "kod_pocztowy"
+    t.string   "numer_lokalu"
+    t.integer  "zamowienia_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["zamowienia_id"], name: "index_kliencis_on_zamowienia_id"
   end
 
-  create_table "obszary", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "obszaries", force: :cascade do |t|
+    t.integer  "id_obszaru"
+    t.string   "nazwa_obszaru"
+    t.integer  "restauracje_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["restauracje_id"], name: "index_obszaries_on_restauracje_id"
   end
 
-  create_table "pracownicy", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "pracownicies", force: :cascade do |t|
+    t.integer  "id_pracownika"
+    t.string   "imie"
+    t.string   "nazwisko"
+    t.float    "zarobki"
+    t.integer  "zamowienia_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["zamowienia_id"], name: "index_pracownicies_on_zamowienia_id"
   end
 
-  create_table "produkty", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "produkties", force: :cascade do |t|
+    t.integer  "id_produktu"
+    t.string   "nazwa"
+    t.float    "cena"
+    t.integer  "czas_przygotowania"
+    t.integer  "produkty_na_zamowieniu_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["produkty_na_zamowieniu_id"], name: "index_produkties_on_produkty_na_zamowieniu_id"
   end
 
-  create_table "produkty_na_zamowieniu", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "produkty_na_zamowienius", force: :cascade do |t|
+    t.integer  "liczba_sztuk"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "restauracje", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "restauracjes", force: :cascade do |t|
+    t.integer  "id_restauracji"
+    t.string   "nazwa"
+    t.string   "ulica"
+    t.string   "numer_lokalu"
+    t.string   "kod_pocztowy"
+    t.integer  "pracownicy_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["pracownicy_id"], name: "index_restauracjes_on_pracownicy_id"
   end
 
-  create_table "typy_pracownika", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "typy_pracownikas", force: :cascade do |t|
+    t.integer  "id_typu"
+    t.string   "nazwa_typu"
+    t.integer  "pracownicy_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["pracownicy_id"], name: "index_typy_pracownikas_on_pracownicy_id"
   end
 
-  create_table "ulice", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "ulices", force: :cascade do |t|
+    t.integer  "id_ulicy"
+    t.string   "ulica"
+    t.string   "kod_pocztowy"
+    t.string   "numer_lokalu"
+    t.integer  "obszary_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["obszary_id"], name: "index_ulices_on_obszary_id"
   end
 
   create_table "zamowienia", force: :cascade do |t|
-    t.string   "index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "id_zamowienia"
+    t.integer  "czas_realizacji"
+    t.integer  "produkty_na_zamowieniu_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["produkty_na_zamowieniu_id"], name: "index_zamowienia_on_produkty_na_zamowieniu_id"
+  end
+
+  create_table "zamowienias", force: :cascade do |t|
+    t.integer  "id_zamowienia"
+    t.integer  "czas_realizacji"
+    t.integer  "produkty_na_zamowieniu_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["produkty_na_zamowieniu_id"], name: "index_zamowienias_on_produkty_na_zamowieniu_id"
   end
 
 end

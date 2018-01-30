@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ulices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id ulicy</th>
+      <th>Ulica</th>
+      <th>Kod pocztowy</th>
+      <th>Numer lokalu</th>
+      <th>Obszary</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ulices.each do |ulice| %>
+      <tr>
+        <td><%= ulice.id_ulicy %></td>
+        <td><%= ulice.ulica %></td>
+        <td><%= ulice.kod_pocztowy %></td>
+        <td><%= ulice.numer_lokalu %></td>
+        <td><%= ulice.obszary %></td>
+        <td><%= link_to 'Show', ulice %></td>
+        <td><%= link_to 'Edit', edit_ulice_path(ulice) %></td>
+        <td><%= link_to 'Destroy', ulice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ulice', new_ulice_path %>

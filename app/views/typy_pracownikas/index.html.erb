@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Typy Pracownikas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id typu</th>
+      <th>Nazwa typu</th>
+      <th>Pracownicy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typy_pracownikas.each do |typy_pracownika| %>
+      <tr>
+        <td><%= typy_pracownika.id_typu %></td>
+        <td><%= typy_pracownika.nazwa_typu %></td>
+        <td><%= typy_pracownika.pracownicy %></td>
+        <td><%= link_to 'Show', typy_pracownika %></td>
+        <td><%= link_to 'Edit', edit_typy_pracownika_path(typy_pracownika) %></td>
+        <td><%= link_to 'Destroy', typy_pracownika, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Typy Pracownika', new_typy_pracownika_path %>

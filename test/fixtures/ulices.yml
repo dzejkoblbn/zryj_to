@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_ulicy: 1
+  ulica: MyString
+  kod_pocztowy: MyString
+  numer_lokalu: MyString
+  obszary: one
+
+two:
+  id_ulicy: 1
+  ulica: MyString
+  kod_pocztowy: MyString
+  numer_lokalu: MyString
+  obszary: two

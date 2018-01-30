@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_zamowienia: 1
+  czas_realizacji: 1
+  produkty_na_zamowieniu: one
+
+two:
+  id_zamowienia: 1
+  czas_realizacji: 1
+  produkty_na_zamowieniu: two

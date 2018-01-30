@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id obszaru:</strong>
+  <%= @obszary.id_obszaru %>
+</p>
+
+<p>
+  <strong>Nazwa obszaru:</strong>
+  <%= @obszary.nazwa_obszaru %>
+</p>
+
+<p>
+  <strong>Restauracje:</strong>
+  <%= @obszary.restauracje %>
+</p>
+
+<%= link_to 'Edit', edit_obszary_path(@obszary) %> |
+<%= link_to 'Back', obszaries_path %>

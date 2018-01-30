@@ -1,0 +1,32 @@
+<%= form_for(obszary) do |f| %>
+  <% if obszary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(obszary.errors.count, "error") %> prohibited this obszary from being saved:</h2>
+
+      <ul>
+      <% obszary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_obszaru %>
+    <%= f.number_field :id_obszaru %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nazwa_obszaru %>
+    <%= f.text_field :nazwa_obszaru %>
+  </div>
+
+  <div class="field">
+    <%= f.label :restauracje_id %>
+    <%= f.text_field :restauracje_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
