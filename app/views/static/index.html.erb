@@ -1,0 +1,14 @@
+<h1>Strona główna</h1>
+<p>
+A teraz trochę widoków razem z routami
+</p>
+
+<ul>
+<% @restauracjas.each do |restauracja| %>
+   <%= link_to restauracja do %>
+    <li><%= restauracja.nazwa %> <%= restauracja.ulica %></li>
+   <% end %>
+<% end %>
+</ul>
+
+
